@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=1.0, user-scalable=no">
+
+<title>VICKY ARMY 💲</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 15% 8%,
+        rgba(92,55,190,.30),transparent 30%),
+        radial-gradient(circle at 90% 90%,
+        rgba(0,119,190,.28),transparent 32%),
+        #06070d;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* MAIN AREA */
+.page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px 16px;
+}
+
+/* GLASS CARD */
+.card{
+    width:100%;
+    max-width:640px;
+    min-height:760px;
+    padding:68px 40px 40px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(38,35,70,.68),
+            rgba(16,16,22,.90)
+        );
+
+    border:1px solid rgba(255,255,255,.13);
+    border-radius:40px;
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.60),
+        inset 0 1px 0 rgba(255,255,255,.06);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    position:relative;
+    overflow:hidden;
+}
+
+/* CARD GLOW */
+.card::before{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    top:-120px;
+    left:50%;
+    transform:translateX(-50%);
+
+    background:rgba(103,76,255,.18);
+    filter:blur(80px);
+    border-radius:50%;
+    pointer-events:none;
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    right:-180px;
+    bottom:-150px;
+
+    background:rgba(0,132,220,.20);
+    filter:blur(75px);
+    border-radius:50%;
+    pointer-events:none;
+}
+
+/* PROFILE */
+.profile{
+    width:168px;
+    height:168px;
+    padding:5px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #6747ff,
+        #9a65ff,
+        #278cff
+    );
+
+    box-shadow:
+        0 0 20px rgba(95,72,255,.75),
+        0 0 55px rgba(75,110,255,.35);
+
+    position:relative;
+    z-index:2;
+}
+
+.profile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+
+    border-radius:50%;
+    border:3px solid #090912;
+}
+
+/* HEADLINE */
+.title{
+    margin-top:42px;
+
+    font-size:48px;
+    line-height:1.1;
+    font-weight:800;
+    text-align:center;
+    letter-spacing:.5px;
+
+    background:linear-gradient(
+        90deg,
+        #7b72ff,
+        #8fa5ff,
+        #6e80ff
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    position:relative;
+    z-index:2;
+}
+
+/* VERIFIED BADGE */
+.badge{
+    margin-top:22px;
+
+    padding:13px 28px;
+
+    border:1px solid rgba(124,90,255,.55);
+    border-radius:40px;
+
+    background:rgba(74,56,150,.13);
+
+    color:#8b9cff;
+
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:.4px;
+
+    box-shadow:
+        inset 0 0 20px rgba(98,73,255,.06),
+        0 0 18px rgba(78,62,180,.12);
+
+    position:relative;
+    z-index:2;
+}
+
+/* DESCRIPTION */
+.description{
+    margin-top:38px;
+    max-width:520px;
+
+    text-align:center;
+
+    color:#c5c4cf;
+    font-size:21px;
+    line-height:1.75;
+    font-weight:400;
+
+    position:relative;
+    z-index:2;
+}
+
+/* BUTTON */
+.join-btn{
+    width:100%;
+    height:88px;
+
+    margin-top:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+
+    border:0;
+    border-radius:24px;
+
+    background:linear-gradient(
+        100deg,
+        #6944ff,
+        #3d91ff
+    );
+
+    color:#fff;
+
+    font-size:25px;
+    font-weight:800;
+    text-decoration:none;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 30px rgba(76,85,255,.30),
+        0 0 45px rgba(59,119,255,.18);
+
+    position:relative;
+    overflow:hidden;
+    z-index:2;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+}
+
+/* BUTTON SHINE */
+.join-btn::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-130%;
+    width:70%;
+    height:100%;
+
+    background:linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+    animation:shine 2.8s infinite;
+}
+
+@keyframes shine{
+    0%{
+        left:-130%;
+    }
+    55%,100%{
+        left:150%;
+    }
+}
+
+.join-btn:active{
+    transform:scale(.97);
+    box-shadow:
+        0 5px 20px rgba(76,85,255,.25);
+}
+
+/* TELEGRAM ICON */
+.telegram{
+    width:35px;
+    height:35px;
+    position:relative;
+    z-index:3;
+    fill:#fff;
+    flex-shrink:0;
+}
+
+/* REDIRECTING */
+.redirect{
+    margin-top:31px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+
+    color:#888794;
+    font-size:18px;
+
+    position:relative;
+    z-index:2;
+}
+
+.loader{
+    width:31px;
+    height:31px;
+
+    border-radius:50%;
+    border:3px solid rgba(135,110,255,.20);
+    border-top-color:#896bff;
+
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* FOOTER */
+.footer{
+    margin-top:44px;
+
+    color:#676775;
+    font-size:16px;
+
+    position:relative;
+    z-index:2;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+    .page{
+        padding:0;
+        min-height:100vh;
+    }
+
+    .card{
+        min-height:100vh;
+        max-width:none;
+
+        padding:
+            80px 27px
+            35px;
+
+        border-radius:0;
+        border-left:0;
+        border-right:0;
+
+        justify-content:center;
+    }
+
+    .profile{
+        width:150px;
+        height:150px;
+    }
+
+    .title{
+        margin-top:34px;
+        font-size:40px;
+    }
+
+    .badge{
+        margin-top:18px;
+        padding:11px 22px;
+        font-size:16px;
+    }
+
+    .description{
+        margin-top:30px;
+        font-size:18px;
+        line-height:1.7;
+    }
+
+    .join-btn{
+        height:78px;
+        margin-top:34px;
+        border-radius:21px;
+        font-size:21px;
+    }
+
+    .telegram{
+        width:31px;
+        height:31px;
+    }
+
+    .redirect{
+        margin-top:27px;
+        font-size:16px;
+    }
+
+    .footer{
+        margin-top:38px;
+        font-size:14px;
+    }
+}
+
+/* SMALL PHONES */
+@media(max-height:700px){
+
+    .card{
+        padding-top:45px;
+        padding-bottom:30px;
+    }
+
+    .profile{
+        width:125px;
+        height:125px;
+    }
+
+    .title{
+        margin-top:25px;
+        font-size:34px;
+    }
+
+    .badge{
+        margin-top:14px;
+    }
+
+    .description{
+        margin-top:22px;
+        font-size:16px;
+    }
+
+    .join-btn{
+        margin-top:25px;
+        height:68px;
+    }
+
+    .footer{
+        margin-top:25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <main class="card">
+
+        <!-- PROFILE IMAGE -->
+        <div class="profile">
+            <img
+                src="https://d1yei2z3i6k35z.cloudfront.net/19029959/6aa5ab4bca0f71.72166505_5260.jpg"
+                alt="VICKY ARMY">
+        </div>
+
+        <!-- HEADLINE -->
+        <h1 class="title">
+            VICKY ARMY 💲
+        </h1>
+
+        <!-- BADGE -->
+        <div class="badge">
+            ✓ OFFICIAL COMMUNITY
+        </div>
+
+        <!-- DESCRIPTION -->
+        <p class="description">
+            Join the VICKY ARMY community and stay connected
+            with our latest updates and information.
+        </p>
+
+        <!-- TELEGRAM BUTTON -->
+        <a
+            class="join-btn"
+            href="https://t.me/+UdfbWJE8NpE1Nzc1"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="joinTelegram()"
+        >
+
+            <!-- Telegram SVG -->
+            <svg
+                class="telegram"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+                <path d="M21.5 3.5L18.2 20c-.25 1.17-.9 1.46-1.83.91l-5.02-3.7-2.42 2.33c-.27.27-.5.5-1.02.5l.36-5.1 9.28-8.38c.4-.36-.09-.56-.62-.2L5.47 13.7.55 12.16c-1.07-.33-1.09-1.07.22-1.58L20 3.1c.91-.34 1.71.2 1.5.4z"/>
+            </svg>
+
+            <span>JOIN TELEGRAM</span>
+
+        </a>
+
+        <!-- REDIRECTING -->
+        <div class="redirect">
+
+            <span class="loader"></span>
+
+            <span>
+                Redirecting you now...
+            </span>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            © 2026 VICKY ARMY 0.2
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+
+function joinTelegram(){
+
+    /*
+       Button click directly opens the Telegram channel.
+       No forced popup or automatic redirect is used.
+    */
+
+    const button =
+        document.querySelector(".join-btn");
+
+    button.style.transform = "scale(.97)";
+
+    setTimeout(function(){
+
+        button.style.transform = "";
+
+    },180);
+
+}
+
+</script>
+
+</body>
+</html>
